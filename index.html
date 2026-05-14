@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="lv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta — LV default, swapped by JS -->
+  <title>Ventilatori Latvijā — Klusie vasaras ventilatori no 19 EUR | Ventilatori.lv</title>
+  <meta name="description" content="Pērciet klusos, enerģijefektīvos ventilatorus ar piegādi visā Latvijā. Galda, torņa un grīdas ventilatori no 19 EUR. Sencor, Rowenta, Xiaomi — 2 gadu garantija.">
+  <meta name="keywords" content="ventilatori, ventilators Latvija, galda ventilators, torņa ventilators, grīdas ventilators, pirkt ventilatoru Rīga, vasaras ventilators, kluss ventilators, Sencor ventilators, Rowenta ventilators, lēts ventilators">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ventilatori Latvijā — Klusie vasaras ventilatori no 19 EUR">
+  <meta property="og:description" content="Pērciet klusos, enerģijefektīvos ventilatorus ar piegādi visā Latvijā.">
+  <meta property="og:image" content="https://images.pexels.com/photos/33013285/pexels-photo-33013285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts — Inter + Merriweather Sans (Latin + Cyrillic) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #1B6B93;
+      --color-secondary: #F7A440;
+      --color-accent: #E8F1F5;
+      --color-background: #FAFBFC;
+      --color-surface: #FFFFFF;
+      --color-text: #1A2332;
+    }
+    body {
+      font-family: 'Merriweather Sans', sans-serif;
+      color: var(--color-text);
+      background: var(--color-background);
+    }
+    h1, h2, h3, h4, h5, h6, nav, button, .font-heading {
+      font-family: 'Inter', sans-serif;
+    }
+    .gradient-hero {
+      background: linear-gradient(135deg, #1B6B93 0%, #145a7d 40%, #0e4a68 70%, #1A2332 100%);
+    }
+    .glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary { list-style: none; }
+    details[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.3s ease; }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#C8D6DE] shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="#hero" class="text-2xl font-bold" style="color: var(--color-primary);">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:28px;">air</span>Ventilatori.lv
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8 text-sm font-semibold" style="color: var(--color-text);">
+      <a href="#features" class="hover:text-[#1B6B93] transition-colors" data-i18n="nav_features">Priekšrocības</a>
+      <a href="#products" class="hover:text-[#1B6B93] transition-colors" data-i18n="nav_products">Produkti</a>
+      <a href="#testimonials" class="hover:text-[#1B6B93] transition-colors" data-i18n="nav_testimonials">Atsauksmes</a>
+      <a href="#faq" class="hover:text-[#1B6B93] transition-colors" data-i18n="nav_faq">BUJ</a>
+    </div>
+
+    <!-- Language Switcher + Mobile Hamburger -->
+    <div class="flex items-center gap-4">
+      <div class="flex rounded-full overflow-hidden border border-[#C8D6DE]">
+        <button onclick="setLang('lv')" id="btn-lv" class="px-3 py-1 text-xs font-bold bg-[#1B6B93] text-white transition-all duration-200">LV</button>
+        <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 text-xs font-bold bg-white text-[#1A2332] transition-all duration-200">EN</button>
+        <button onclick="setLang('ru')" id="btn-ru" class="px-3 py-1 text-xs font-bold bg-white text-[#1A2332] transition-all duration-200">RU</button>
+      </div>
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" onclick="toggleMobileMenu()">
+        <span class="block w-6 h-0.5 bg-[#1A2332] transition-all duration-300" id="ham1"></span>
+        <span class="block w-6 h-0.5 bg-[#1A2332] transition-all duration-300" id="ham2"></span>
+        <span class="block w-6 h-0.5 bg-[#1A2332] transition-all duration-300" id="ham3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#C8D6DE] px-6 py-4">
+    <a href="#features" onclick="closeMobileMenu()" class="block py-3 font-semibold text-[#1A2332] hover:text-[#1B6B93]" data-i18n="nav_features">Priekšrocības</a>
+    <a href="#products" onclick="closeMobileMenu()" class="block py-3 font-semibold text-[#1A2332] hover:text-[#1B6B93]" data-i18n="nav_products">Produkti</a>
+    <a href="#testimonials" onclick="closeMobileMenu()" class="block py-3 font-semibold text-[#1A2332] hover:text-[#1B6B93]" data-i18n="nav_testimonials">Atsauksmes</a>
+    <a href="#faq" onclick="closeMobileMenu()" class="block py-3 font-semibold text-[#1A2332] hover:text-[#1B6B93]" data-i18n="nav_faq">BUJ</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header id="hero" class="gradient-hero min-h-screen pt-16 flex items-center" data-aos="fade-in">
+  <div class="max-w-7xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-up" data-aos-delay="100">
+      <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6" data-i18n="hero_headline">Veldze karstā vasarā — ventilatori no 19 EUR</h1>
+      <p class="text-lg md:text-xl text-white/85 leading-relaxed mb-10" data-i18n="hero_sub">Klusie, enerģijefektīvie ventilatori ar piegādi visā Latvijā. Izvēlies savu vēsumu.</p>
+      <a href="#products" class="inline-block rounded-full px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl text-[#1A2332]" style="background: var(--color-secondary);" data-i18n="hero_cta">Apskatīt ventilatorus</a>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="300" class="flex justify-center">
+      <img src="https://images.pexels.com/photos/33013285/pexels-photo-33013285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Vivid display of traditional hand fans at an outdoor market stall, showcasing diverse designs and colors." loading="lazy" class="rounded-3xl shadow-2xl max-h-[500px] object-cover w-full">
+    </div>
+  </div>
+</header>
+
+<!-- ========== PROBLEM SECTION ========== -->
+<section class="py-20 md:py-32" style="background: var(--color-accent);">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-16" style="color: var(--color-text);" data-i18n="problem_title" data-aos="fade-up">Latvijas vasaras kļūst arvien karstākas</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass-card backdrop-blur-md bg-white/60 border border-white/40 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-secondary);">thermometer</span>
+        <h3 class="text-xl font-bold mb-2" data-i18n="problem_1_title">Temperatūra sasniedz 33°C</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="problem_1_desc">Latvijā karstuma viļņi kļūst biežāki — Daugavpilī reģistrēti 33,7°C.</p>
+      </div>
+      <div class="glass-card backdrop-blur-md bg-white/60 border border-white/40 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-secondary);">ac_unit</span>
+        <h3 class="text-xl font-bold mb-2" data-i18n="problem_2_title">Lielākajai daļai māju nav gaisa kondicionēšanas</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="problem_2_desc">Vairākums Latvijas mājokļu un biroju nav aprīkoti ar gaisa kondicionieriem.</p>
+      </div>
+      <div class="glass-card backdrop-blur-md bg-white/60 border border-white/40 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="300">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-secondary);">bedtime</span>
+        <h3 class="text-xl font-bold mb-2" data-i18n="problem_3_title">Karstas naktis traucē miegu</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="problem_3_desc">Bērni un pieaugušie cieš no bezmiega karstajās vasaras naktīs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section id="features" class="py-20 md:py-32" style="background: var(--color-background);">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-16" data-i18n="features_title" data-aos="fade-up">Kāpēc izvēlēties mūs?</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Feature 1: Quiet -->
+      <div class="glass-card backdrop-blur-md bg-white/70 border border-white/30 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-primary);">nights_stay</span>
+        <h3 class="text-lg font-bold mb-2" data-i18n="feat_1_title">Klusa darbība</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="feat_1_desc">Guļ mierīgi — mūsu ventilatori darbojas zem 35 dB, klusāk par čukstu.</p>
+      </div>
+      <!-- Feature 2: Energy -->
+      <div class="glass-card backdrop-blur-md bg-white/70 border border-white/30 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-primary);">eco</span>
+        <h3 class="text-lg font-bold mb-2" data-i18n="feat_2_title">Zems enerģijas patēriņš</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="feat_2_desc">Patērē tikai 25–45 W — vasaras vēsums bez lieliem elektrības rēķiniem.</p>
+      </div>
+      <!-- Feature 3: Delivery -->
+      <div class="glass-card backdrop-blur-md bg-white/70 border border-white/30 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-primary);">local_shipping</span>
+        <h3 class="text-lg font-bold mb-2" data-i18n="feat_3_title">Piegāde 1–3 dienās</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="feat_3_desc">Ātra piegāde uz Rīgu, Daugavpili, Liepāju, Jelgavu un visām Latvijas pilsētām.</p>
+      </div>
+      <!-- Feature 4: Warranty -->
+      <div class="glass-card backdrop-blur-md bg-white/70 border border-white/30 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+        <span class="material-symbols-outlined text-5xl mb-4 block" style="color: var(--color-primary);">verified_user</span>
+        <h3 class="text-lg font-bold mb-2" data-i18n="feat_4_title">2 gadu garantija</h3>
+        <p class="text-base leading-relaxed opacity-80" data-i18n="feat_4_desc">Pilna ražotāja garantija un bezmaksas atgriešana 14 dienu laikā.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCTS ========== -->
+<section id="products" class="py-20 md:py-32" style="background: var(--color-accent);">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-i18n="products_title" data-aos="fade-up">Mūsu ventilatori</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Product 1: Desk Fan -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-[#C8D6DE]" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/7986144/pexels-photo-7986144.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Vibrant sale display with colorful paper fans, red gift, and sale tags on black background." loading="lazy" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2" data-i18n="prod_1_name">Sencor SFE 2340WH Galda Ventilators</h3>
+          <p class="text-base leading-relaxed opacity-80 mb-4" data-i18n="prod_1_desc">23 cm galda ventilators ar 3 ātrumiem un nosvēršanos. Kompakts un kluss — ideāls biroja galdam vai nakts galdiņam.</p>
+          <p class="text-sm opacity-60 mb-4" data-i18n="prod_1_specs">3 ātrumi, oscilācija, 30 W</p>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold" style="color: var(--color-primary);" data-i18n="prod_1_price">24,99 EUR</span>
+            <a href="#cta" class="rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: var(--color-secondary);" data-i18n="prod_cta">Pasūtīt</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2: Tower Fan — HIGHLIGHTED -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 relative" style="border-color: var(--color-secondary);" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute top-4 right-4 rounded-full px-4 py-1 text-xs font-bold text-white z-10" style="background: var(--color-secondary);" data-i18n="prod_popular">Populārākais</div>
+        <img src="https://images.pexels.com/photos/8102618/pexels-photo-8102618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A woman in a floral top and white pants sits in a minimalist room surrounded by fans." loading="lazy" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2" data-i18n="prod_2_name">Sencor SFN 5040BL Torņa Ventilators</h3>
+          <p class="text-base leading-relaxed opacity-80 mb-4" data-i18n="prod_2_desc">Elegants 90 W torņa ventilators ar tālvadības pulti, taimeri un ultra-plānu dizainu. Piemērots guļamistabai vai dzīvojamai istabai.</p>
+          <p class="text-sm opacity-60 mb-4" data-i18n="prod_2_specs">Tālvadības pults, taimeris, 3 režīmi</p>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold" style="color: var(--color-primary);" data-i18n="prod_2_price">54,99 EUR</span>
+            <a href="#cta" class="rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: var(--color-secondary);" data-i18n="prod_cta">Pasūtīt</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: Pedestal Fan -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-[#C8D6DE]" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://images.pexels.com/photos/29548248/pexels-photo-29548248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="A vibrant crowd cheers enthusiastically at a sports event in Ankara, Türkiye, capturing the energy and excitement." loading="lazy" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2" data-i18n="prod_3_name">Rowenta VU5640 Turbo Silence Stand</h3>
+          <p class="text-base leading-relaxed opacity-80 mb-4" data-i18n="prod_3_desc">Augstākās klases grīdas ventilators ar 4 ātrumiem un Turbo Silence tehnoloģiju. Tikai 35 dB — viens no klusākajiem tirgū.</p>
+          <p class="text-sm opacity-60 mb-4" data-i18n="prod_3_specs">4 ātrumi, Turbo Silence, regulējams augstums</p>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold" style="color: var(--color-primary);" data-i18n="prod_3_price">89,99 EUR</span>
+            <a href="#cta" class="rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: var(--color-secondary);" data-i18n="prod_cta">Pasūtīt</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials" class="py-20 md:py-32" style="background: var(--color-background);">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-i18n="testimonials_title" data-aos="fade-up">Ko saka mūsu klienti</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Testimonial 1: LV -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg relative border border-[#C8D6DE]" data-aos="fade-up" data-aos-delay="100">
+        <span class="text-6xl opacity-20 absolute top-2 left-4 font-serif" style="color: var(--color-primary);">&ldquo;</span>
+        <img src="https://images.pexels.com/photos/8143324/pexels-photo-8143324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling woman holding hand fans in a blossoming spring garden, wearing traditional attire." loading="lazy" class="w-16 h-16 rounded-full object-cover mx-auto mb-4 border-2" style="border-color: var(--color-primary);">
+        <p class="text-base leading-relaxed italic mb-6 mt-4" data-i18n="test_1_quote">Pagājušajā vasarā nopirku Sencor torņa ventilatoru — bērni beidzot var normāli gulēt karstajās naktīs. Kluss, kompakts, un par tādu cenu — labāk nevar būt.</p>
+        <p class="font-bold" data-i18n="test_1_author">— Inga K., Jelgava</p>
+      </div>
+      <!-- Testimonial 2: EN -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg relative border border-[#C8D6DE]" data-aos="fade-up" data-aos-delay="200">
+        <span class="text-6xl opacity-20 absolute top-2 left-4 font-serif" style="color: var(--color-primary);">&ldquo;</span>
+        <img src="https://images.pexels.com/photos/12153268/pexels-photo-12153268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Vibrant crowd with flags cheering at a football stadium during the day." loading="lazy" class="w-16 h-16 rounded-full object-cover mx-auto mb-4 border-2" style="border-color: var(--color-primary);">
+        <p class="text-base leading-relaxed italic mb-6 mt-4" data-i18n="test_2_quote">Moved to Riga last year and didn't expect the July heat. Ordered a Rowenta pedestal fan on Tuesday, had it by Thursday. Quiet enough to run during video calls. Worth every euro.</p>
+        <p class="font-bold" data-i18n="test_2_author">— Tom H., Riga</p>
+      </div>
+      <!-- Testimonial 3: RU -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg relative border border-[#C8D6DE]" data-aos="fade-up" data-aos-delay="300">
+        <span class="text-6xl opacity-20 absolute top-2 left-4 font-serif" style="color: var(--color-primary);">&ldquo;</span>
+        <img src="https://images.pexels.com/photos/26840789/pexels-photo-26840789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Charming aerial shot of historic buildings in Riga's Old Town, showcasing classic architecture." loading="lazy" class="w-16 h-16 rounded-full object-cover mx-auto mb-4 border-2" style="border-color: var(--color-primary);">
+        <p class="text-base leading-relaxed italic mb-6 mt-4" data-i18n="test_3_quote">Живу на последнем этаже в Кенгарагсе — летом как в сауне. Купил башенный вентилятор с пультом, теперь работаю из дома без проблем. Доставили на следующий день.</p>
+        <p class="font-bold" data-i18n="test_3_author">— Дмитрий С., Рига</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" class="py-20 md:py-32" style="background: var(--color-accent);">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-i18n="faq_title" data-aos="fade-up">Biežāk uzdotie jautājumi</h2>
+
+    <details class="bg-white rounded-xl shadow mb-4 group" data-aos="fade-up" data-aos-delay="100">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg">
+        <span data-i18n="faq_1_q">Cik klusi ir jūsu ventilatori?</span>
+        <span class="material-symbols-outlined faq-icon text-[#1B6B93]">add</span>
+      </summary>
+      <div class="px-6 pb-6 text-base leading-relaxed opacity-80" data-i18n="faq_1_a">Mūsu ventilatori darbojas 28–45 dB diapazonā. Klusākie modeļi (piemēram, Rowenta Turbo Silence) ir zem 35 dB — klusāki par parastu sarunu.</div>
+    </details>
+
+    <details class="bg-white rounded-xl shadow mb-4 group" data-aos="fade-up" data-aos-delay="150">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg">
+        <span data-i18n="faq_2_q">Cik ātri tiek veikta piegāde?</span>
+        <span class="material-symbols-outlined faq-icon text-[#1B6B93]">add</span>
+      </summary>
+      <div class="px-6 pb-6 text-base leading-relaxed opacity-80" data-i18n="faq_2_a">Standarta piegāde visā Latvijā — 1–3 darba dienas. Rīgā pieejama arī piegāde nākamajā dienā.</div>
+    </details>
+
+    <details class="bg-white rounded-xl shadow mb-4 group" data-aos="fade-up" data-aos-delay="200">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg">
+        <span data-i18n="faq_3_q">Vai es varu atgriezt ventilatoru, ja tas man nepatīk?</span>
+        <span class="material-symbols-outlined faq-icon text-[#1B6B93]">add</span>
+      </summary>
+      <div class="px-6 pb-6 text-base leading-relaxed opacity-80" data-i18n="faq_3_a">Jā, mēs piedāvājam bezmaksas atgriešanu 14 dienu laikā saskaņā ar ES patērētāju tiesībām. Ventilatoram jābūt oriģinālajā iepakojumā.</div>
+    </details>
+
+    <details class="bg-white rounded-xl shadow mb-4 group" data-aos="fade-up" data-aos-delay="250">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg">
+        <span data-i18n="faq_4_q">Kurš ventilators ir piemērotākais guļamistabai?</span>
+        <span class="material-symbols-outlined faq-icon text-[#1B6B93]">add</span>
+      </summary>
+      <div class="px-6 pb-6 text-base leading-relaxed opacity-80" data-i18n="faq_4_a">Guļamistabai iesakām torņa ventilatorus — tie ir klusāki, aizņem mazāk vietas, un daudzi modeļi ir ar nakts režīmu un taimeri.</div>
+    </details>
+
+    <details class="bg-white rounded-xl shadow mb-4 group" data-aos="fade-up" data-aos-delay="300">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg">
+        <span data-i18n="faq_5_q">Kāds ir elektroenerģijas patēriņš?</span>
+        <span class="material-symbols-outlined faq-icon text-[#1B6B93]">add</span>
+      </summary>
+      <div class="px-6 pb-6 text-base leading-relaxed opacity-80" data-i18n="faq_5_a">Galda ventilatori patērē apmēram 25–30 W, torņa ventilatori — 45–90 W. Pat ja lietojat ventilatoru 8 stundas dienā, mēneša izdevumi ir tikai 2–5 EUR.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section id="cta" class="gradient-hero py-20 md:py-32">
+  <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" data-i18n="cta_title">Gatavs vasarai? Izvēlies savu ventilatoru!</h2>
+    <p class="text-lg text-white/85 mb-10 leading-relaxed" data-i18n="cta_sub">Bezmaksas piegāde pasūtījumiem virs 50 EUR. 2 gadu garantija visiem produktiem.</p>
+    <a href="#products" class="inline-block rounded-full px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl text-[#1A2332]" style="background: var(--color-secondary);" data-i18n="cta_btn">Apskatīt ventilatorus</a>
+    <img src="https://images.pexels.com/photos/32661435/pexels-photo-32661435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Capture of the historical architecture and vibrant rooftops of Old Riga, Latvia." loading="lazy" class="mt-12 rounded-2xl shadow-2xl mx-auto max-h-[350px] object-cover w-full max-w-3xl">
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="py-12" style="background: var(--color-text); color: white;">
+  <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <h4 class="text-xl font-bold mb-4">
+        <span class="material-symbols-outlined align-middle mr-1">air</span>Ventilatori.lv
+      </h4>
+      <p class="text-sm opacity-70 leading-relaxed" data-i18n="footer_tagline">Vēsums katrā Latvijas mājā.</p>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4" data-i18n="footer_contact_label">Kontakti</h4>
+      <p class="text-sm opacity-70 mb-1">info@ventilatori.lv</p>
+      <p class="text-sm opacity-70 mb-1">+371 2X XXX XXX</p>
+      <p class="text-sm opacity-70" data-i18n="footer_hours">P.–Pk. 9:00–18:00</p>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4" data-i18n="footer_address_label">Adrese</h4>
+      <p class="text-sm opacity-70" data-i18n="footer_address">Brīvības iela 100, Rīga, LV-1001</p>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4" data-i18n="footer_social_label">Sekojiet mums</h4>
+      <div class="flex gap-4">
+        <a href="#" class="opacity-70 hover:opacity-100 transition-opacity text-white"><span class="material-symbols-outlined">group</span> Facebook</a>
+        <a href="#" class="opacity-70 hover:opacity-100 transition-opacity text-white"><span class="material-symbols-outlined">photo_camera</span> Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-8 pt-8 border-t border-white/20 text-center text-sm opacity-50">
+    &copy; 2026 Ventilatori.lv. <span data-i18n="footer_rights">Visas tiesības aizsargātas.</span>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT: i18n + Mobile Menu ========== -->
+<script>
+// Complete i18n dictionary — verbatim from design brief
+const i18n = {
+  lv: {
+    // Nav
+    nav_features: "Priekšrocības",
+    nav_products: "Produkti",
+    nav_testimonials: "Atsauksmes",
+    nav_faq: "BUJ",
+    // Hero
+    hero_headline: "Veldze karstā vasarā — ventilatori no 19 EUR",
+    hero_sub: "Klusie, enerģijefektīvie ventilatori ar piegādi visā Latvijā. Izvēlies savu vēsumu.",
+    hero_cta: "Apskatīt ventilatorus",
+    // Problem
+    problem_title: "Latvijas vasaras kļūst arvien karstākas",
+    problem_1_title: "Temperatūra sasniedz 33°C",
+    problem_1_desc: "Latvijā karstuma viļņi kļūst biežāki — Daugavpilī reģistrēti 33,7°C.",
+    problem_2_title: "Lielākajai daļai māju nav gaisa kondicionēšanas",
+    problem_2_desc: "Vairākums Latvijas mājokļu un biroju nav aprīkoti ar gaisa kondicionieriem.",
+    problem_3_title: "Karstas naktis traucē miegu",
+    problem_3_desc: "Bērni un pieaugušie cieš no bezmiega karstajās vasaras naktīs.",
+    // Features
+    features_title: "Kāpēc izvēlēties mūs?",
+    feat_1_title: "Klusa darbība",
+    feat_1_desc: "Guļ mierīgi — mūsu ventilatori darbojas zem 35 dB, klusāk par čukstu.",
+    feat_2_title: "Zems enerģijas patēriņš",
+    feat_2_desc: "Patērē tikai 25–45 W — vasaras vēsums bez lieliem elektrības rēķiniem.",
+    feat_3_title: "Piegāde 1–3 dienās",
+    feat_3_desc: "Ātra piegāde uz Rīgu, Daugavpili, Liepāju, Jelgavu un visām Latvijas pilsētām.",
+    feat_4_title: "2 gadu garantija",
+    feat_4_desc: "Pilna ražotāja garantija un bezmaksas atgriešana 14 dienu laikā.",
+    // Products
+    products_title: "Mūsu ventilatori",
+    prod_1_name: "Sencor SFE 2340WH Galda Ventilators",
+    prod_1_desc: "23 cm galda ventilators ar 3 ātrumiem un nosvēršanos. Kompakts un kluss — ideāls biroja galdam vai nakts galdiņam.",
+    prod_1_specs: "3 ātrumi, oscilācija, 30 W",
+    prod_1_price: "24,99 EUR",
+    prod_2_name: "Sencor SFN 5040BL Torņa Ventilators",
+    prod_2_desc: "Elegants 90 W torņa ventilators ar tālvadības pulti, taimeri un ultra-plānu dizainu. Piemērots guļamistabai vai dzīvojamai istabai.",
+    prod_2_specs: "Tālvadības pults, taimeris, 3 režīmi",
+    prod_2_price: "54,99 EUR",
+    prod_3_name: "Rowenta VU5640 Turbo Silence Stand",
+    prod_3_desc: "Augstākās klases grīdas ventilators ar 4 ātrumiem un Turbo Silence tehnoloģiju. Tikai 35 dB — viens no klusākajiem tirgū.",
+    prod_3_specs: "4 ātrumi, Turbo Silence, regulējams augstums",
+    prod_3_price: "89,99 EUR",
+    prod_cta: "Pasūtīt",
+    prod_popular: "Populārākais",
+    // Testimonials
+    testimonials_title: "Ko saka mūsu klienti",
+    test_1_quote: "Pagājušajā vasarā nopirku Sencor torņa ventilatoru — bērni beidzot var normāli gulēt karstajās naktīs. Kluss, kompakts, un par tādu cenu — labāk nevar būt.",
+    test_1_author: "— Inga K., Jelgava",
+    test_2_quote: "Moved to Riga last year and didn't expect the July heat. Ordered a Rowenta pedestal fan on Tuesday, had it by Thursday. Quiet enough to run during video calls. Worth every euro.",
+    test_2_author: "— Tom H., Riga",
+    test_3_quote: "Живу на последнем этаже в Кенгарагсе — летом как в сауне. Купил башенный вентилятор с пультом, теперь работаю из дома без проблем. Доставили на следующий день.",
+    test_3_author: "— Дмитрий С., Рига",
+    // FAQ
+    faq_title: "Biežāk uzdotie jautājumi",
+    faq_1_q: "Cik klusi ir jūsu ventilatori?",
+    faq_1_a: "Mūsu ventilatori darbojas 28–45 dB diapazonā. Klusākie modeļi (piemēram, Rowenta Turbo Silence) ir zem 35 dB — klusāki par parastu sarunu.",
+    faq_2_q: "Cik ātri tiek veikta piegāde?",
+    faq_2_a: "Standarta piegāde visā Latvijā — 1–3 darba dienas. Rīgā pieejama arī piegāde nākamajā dienā.",
+    faq_3_q: "Vai es varu atgriezt ventilatoru, ja tas man nepatīk?",
+    faq_3_a: "Jā, mēs piedāvājam bezmaksas atgriešanu 14 dienu laikā saskaņā ar ES patērētāju tiesībām. Ventilatoram jābūt oriģinālajā iepakojumā.",
+    faq_4_q: "Kurš ventilators ir piemērotākais guļamistabai?",
+    faq_4_a: "Guļamistabai iesakām torņa ventilatorus — tie ir klusāki, aizņem mazāk vietas, un daudzi modeļi ir ar nakts režīmu un taimeri.",
+    faq_5_q: "Kāds ir elektroenerģijas patēriņš?",
+    faq_5_a: "Galda ventilatori patērē apmēram 25–30 W, torņa ventilatori — 45–90 W. Pat ja lietojat ventilatoru 8 stundas dienā, mēneša izdevumi ir tikai 2–5 EUR.",
+    // CTA
+    cta_title: "Gatavs vasarai? Izvēlies savu ventilatoru!",
+    cta_sub: "Bezmaksas piegāde pasūtījumiem virs 50 EUR. 2 gadu garantija visiem produktiem.",
+    cta_btn: "Apskatīt ventilatorus",
+    // Footer
+    footer_tagline: "Vēsums katrā Latvijas mājā.",
+    footer_contact_label: "Kontakti",
+    footer_hours: "P.–Pk. 9:00–18:00",
+    footer_address_label: "Adrese",
+    footer_address: "Brīvības iela 100, Rīga, LV-1001",
+    footer_social_label: "Sekojiet mums",
+    footer_rights: "Visas tiesības aizsargātas.",
+    // SEO
+    meta_title: "Ventilatori Latvijā — Klusie vasaras ventilatori no 19 EUR | Ventilatori.lv",
+    meta_desc: "Pērciet klusos, enerģijefektīvos ventilatorus ar piegādi visā Latvijā. Galda, torņa un grīdas ventilatori no 19 EUR. Sencor, Rowenta, Xiaomi — 2 gadu garantija."
+  },
+  en: {
+    nav_features: "Features",
+    nav_products: "Products",
+    nav_testimonials: "Testimonials",
+    nav_faq: "FAQ",
+    hero_headline: "Stay Cool This Baltic Summer — Fans from 19 EUR",
+    hero_sub: "Quiet, energy-efficient fans delivered anywhere in Latvia. Find your perfect breeze.",
+    hero_cta: "Browse Fans",
+    problem_title: "Latvian summers are getting hotter",
+    problem_1_title: "Temperatures hit 33°C",
+    problem_1_desc: "Heatwaves in Latvia are becoming more frequent — 33.7°C recorded in Daugavpils.",
+    problem_2_title: "Most homes lack air conditioning",
+    problem_2_desc: "The majority of Latvian homes and offices are not equipped with AC systems.",
+    problem_3_title: "Hot nights ruin sleep",
+    problem_3_desc: "Children and adults suffer from insomnia during hot summer nights.",
+    features_title: "Why choose us?",
+    feat_1_title: "Whisper-Quiet Operation",
+    feat_1_desc: "Sleep soundly — our fans run below 35 dB, quieter than a whisper.",
+    feat_2_title: "Low Energy Consumption",
+    feat_2_desc: "Uses only 25–45 W — summer comfort without the electricity bill shock.",
+    feat_3_title: "Delivery in 1–3 Days",
+    feat_3_desc: "Fast shipping to Riga, Daugavpils, Liepaja, Jelgava, and every city in Latvia.",
+    feat_4_title: "2-Year Warranty",
+    feat_4_desc: "Full manufacturer warranty and free returns within 14 days.",
+    products_title: "Our fans",
+    prod_1_name: "Sencor SFE 2340WH Desk Fan",
+    prod_1_desc: "23 cm desk fan with 3 speeds and oscillation. Compact and quiet — fits any desk or bedside table.",
+    prod_1_specs: "3 speeds, oscillation, 30 W",
+    prod_1_price: "24.99 EUR",
+    prod_2_name: "Sencor SFN 5040BL Tower Fan",
+    prod_2_desc: "Sleek 90 W tower fan with remote control, timer, and ultra-slim design. Built for bedrooms and living rooms.",
+    prod_2_specs: "Remote control, timer, 3 modes",
+    prod_2_price: "54.99 EUR",
+    prod_3_name: "Rowenta VU5640 Turbo Silence Stand",
+    prod_3_desc: "Premium pedestal fan with 4 speeds and Turbo Silence technology. Just 35 dB — among the quietest on the market.",
+    prod_3_specs: "4 speeds, Turbo Silence, adjustable height",
+    prod_3_price: "89.99 EUR",
+    prod_cta: "Order Now",
+    prod_popular: "Most Popular",
+    testimonials_title: "What our customers say",
+    test_1_quote: "Pagājušajā vasarā nopirku Sencor torņa ventilatoru — bērni beidzot var normāli gulēt karstajās naktīs. Kluss, kompakts, un par tādu cenu — labāk nevar būt.",
+    test_1_author: "— Inga K., Jelgava",
+    test_2_quote: "Moved to Riga last year and didn't expect the July heat. Ordered a Rowenta pedestal fan on Tuesday, had it by Thursday. Quiet enough to run during video calls. Worth every euro.",
+    test_2_author: "— Tom H., Riga",
+    test_3_quote: "Живу на последнем этаже в Кенгарагсе — летом как в сауне. Купил башенный вентилятор с пультом, теперь работаю из дома без проблем. Доставили на следующий день.",
+    test_3_author: "— Дмитрий С., Рига",
+    faq_title: "Frequently Asked Questions",
+    faq_1_q: "How quiet are your fans?",
+    faq_1_a: "Our fans operate in the 28–45 dB range. The quietest models (such as the Rowenta Turbo Silence) run below 35 dB — softer than a normal conversation.",
+    faq_2_q: "How fast is delivery?",
+    faq_2_a: "Standard delivery across Latvia takes 1–3 business days. Next-day delivery is available in Riga.",
+    faq_3_q: "Can I return a fan if I don't like it?",
+    faq_3_a: "Yes, we offer free returns within 14 days per EU consumer rights. The fan must be in its original packaging.",
+    faq_4_q: "Which fan is best for a bedroom?",
+    faq_4_a: "For bedrooms, we recommend tower fans — they are quieter, take up less floor space, and many models include a night mode and sleep timer.",
+    faq_5_q: "How much electricity does a fan use?",
+    faq_5_a: "Desk fans use roughly 25–30 W, tower fans 45–90 W. Even running a fan 8 hours a day, your monthly cost is only 2–5 EUR.",
+    cta_title: "Ready for summer? Choose your fan!",
+    cta_sub: "Free delivery on orders over 50 EUR. 2-year warranty on all products.",
+    cta_btn: "Browse Fans",
+    footer_tagline: "Coolness in every Latvian home.",
+    footer_contact_label: "Contact",
+    footer_hours: "Mon–Fri 9:00–18:00",
+    footer_address_label: "Address",
+    footer_address: "Brivibas iela 100, Riga, LV-1001",
+    footer_social_label: "Follow us",
+    footer_rights: "All rights reserved.",
+    meta_title: "Fans in Latvia — Quiet Summer Fans from 19 EUR | Ventilatori.lv",
+    meta_desc: "Buy quiet, energy-efficient fans with delivery across Latvia. Desk, tower, and pedestal fans from 19 EUR. Sencor, Rowenta, Xiaomi — 2-year warranty."
+  },
+  ru: {
+    nav_features: "Преимущества",
+    nav_products: "Продукция",
+    nav_testimonials: "Отзывы",
+    nav_faq: "Вопросы",
+    hero_headline: "Прохлада в жаркое лето — вентиляторы от 19 EUR",
+    hero_sub: "Тихие и энергоэффективные вентиляторы с доставкой по всей Латвии. Выберите свою свежесть.",
+    hero_cta: "Смотреть вентиляторы",
+    problem_title: "Лето в Латвии становится жарче",
+    problem_1_title: "Температура достигает 33°C",
+    problem_1_desc: "Волны жары в Латвии участились — в Даугавпилсе зафиксировано 33,7°C.",
+    problem_2_title: "В большинстве домов нет кондиционеров",
+    problem_2_desc: "Большинство латвийских домов и офисов не оснащены системами кондиционирования.",
+    problem_3_title: "Жаркие ночи мешают сну",
+    problem_3_desc: "Дети и взрослые страдают от бессонницы в жаркие летние ночи.",
+    features_title: "Почему выбирают нас?",
+    feat_1_title: "Бесшумная работа",
+    feat_1_desc: "Спите спокойно — наши вентиляторы работают тише 35 дБ, тише шёпота.",
+    feat_2_title: "Низкое энергопотребление",
+    feat_2_desc: "Потребляет всего 25–45 Вт — летняя прохлада без больших счетов за электричество.",
+    feat_3_title: "Доставка за 1–3 дня",
+    feat_3_desc: "Быстрая доставка в Ригу, Даугавпилс, Лиепаю, Елгаву и по всей Латвии.",
+    feat_4_title: "Гарантия 2 года",
+    feat_4_desc: "Полная гарантия производителя и бесплатный возврат в течение 14 дней.",
+    products_title: "Наши вентиляторы",
+    prod_1_name: "Sencor SFE 2340WH Настольный вентилятор",
+    prod_1_desc: "Настольный вентилятор 23 см с 3 скоростями и поворотом. Компактный и тихий — подходит для стола или тумбочки.",
+    prod_1_specs: "3 скорости, поворот, 30 Вт",
+    prod_1_price: "24,99 EUR",
+    prod_2_name: "Sencor SFN 5040BL Башенный вентилятор",
+    prod_2_desc: "Элегантный башенный вентилятор 90 Вт с пультом ДУ, таймером и ультратонким дизайном. Для спальни и гостиной.",
+    prod_2_specs: "Пульт ДУ, таймер, 3 режима",
+    prod_2_price: "54,99 EUR",
+    prod_3_name: "Rowenta VU5640 Turbo Silence Stand",
+    prod_3_desc: "Премиальный напольный вентилятор с 4 скоростями и технологией Turbo Silence. Всего 35 дБ — один из самых тихих на рынке.",
+    prod_3_specs: "4 скорости, Turbo Silence, регулируемая высота",
+    prod_3_price: "89,99 EUR",
+    prod_cta: "Заказать",
+    prod_popular: "Самый популярный",
+    testimonials_title: "Отзывы наших клиентов",
+    test_1_quote: "Pagājušajā vasarā nopirku Sencor torņa ventilatoru — bērni beidzot var normāli gulēt karstajās naktīs. Kluss, kompakts, un par tādu cenu — labāk nevar būt.",
+    test_1_author: "— Inga K., Jelgava",
+    test_2_quote: "Moved to Riga last year and didn't expect the July heat. Ordered a Rowenta pedestal fan on Tuesday, had it by Thursday. Quiet enough to run during video calls. Worth every euro.",
+    test_2_author: "— Tom H., Riga",
+    test_3_quote: "Живу на последнем этаже в Кенгарагсе — летом как в сауне. Купил башенный вентилятор с пультом, теперь работаю из дома без проблем. Доставили на следующий день.",
+    test_3_author: "— Дмитрий С., Рига",
+    faq_title: "Часто задаваемые вопросы",
+    faq_1_q: "Насколько тихие ваши вентиляторы?",
+    faq_1_a: "Наши вентиляторы работают в диапазоне 28–45 дБ. Самые тихие модели (например, Rowenta Turbo Silence) работают ниже 35 дБ — тише обычного разговора.",
+    faq_2_q: "Как быстро осуществляется доставка?",
+    faq_2_a: "Стандартная доставка по всей Латвии — 1–3 рабочих дня. В Риге доступна доставка на следующий день.",
+    faq_3_q: "Могу ли я вернуть вентилятор, если он мне не подойдёт?",
+    faq_3_a: "Да, мы предлагаем бесплатный возврат в течение 14 дней в соответствии с правами потребителей ЕС. Вентилятор должен быть в оригинальной упаковке.",
+    faq_4_q: "Какой вентилятор лучше всего подходит для спальни?",
+    faq_4_a: "Для спальни мы рекомендуем башенные вентиляторы — они тише, занимают меньше места, и многие модели имеют ночной режим и таймер отключения.",
+    faq_5_q: "Сколько электричества потребляет вентилятор?",
+    faq_5_a: "Настольные вентиляторы потребляют примерно 25–30 Вт, башенные — 45–90 Вт. Даже при работе 8 часов в день ежемесячные расходы составят всего 2–5 EUR.",
+    cta_title: "Готовы к лету? Выберите свой вентилятор!",
+    cta_sub: "Бесплатная доставка при заказе от 50 EUR. Гарантия 2 года на все товары.",
+    cta_btn: "Смотреть вентиляторы",
+    footer_tagline: "Прохлада в каждом доме Латвии.",
+    footer_contact_label: "Контакты",
+    footer_hours: "Пн–Пт 9:00–18:00",
+    footer_address_label: "Адрес",
+    footer_address: "ул. Бривибас 100, Рига, LV-1001",
+    footer_social_label: "Мы в соцсетях",
+    footer_rights: "Все права защищены.",
+    meta_title: "Вентиляторы в Латвии — Тихие летние вентиляторы от 19 EUR | Ventilatori.lv",
+    meta_desc: "Купите тихие, энергоэффективные вентиляторы с доставкой по Латвии. Настольные, башенные и напольные вентиляторы от 19 EUR. Sencor, Rowenta, Xiaomi — гарантия 2 года."
+  }
+};
+
+// Language codes for html lang attribute
+const langCodes = { lv: "lv", en: "en", ru: "ru" };
+
+function setLang(lang) {
+  // Update all i18n elements
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (i18n[lang] && i18n[lang][key]) {
+      el.textContent = i18n[lang][key];
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = langCodes[lang];
+
+  // Update SEO meta tags
+  if (i18n[lang].meta_title) {
+    document.title = i18n[lang].meta_title;
+  }
+  var metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && i18n[lang].meta_desc) {
+    metaDesc.setAttribute("content", i18n[lang].meta_desc);
+  }
+
+  // Update OG tags
+  var ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute("content", i18n[lang].hero_headline || "");
+  var ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute("content", i18n[lang].hero_sub || "");
+
+  // Update button styles
+  ["lv", "en", "ru"].forEach(function(l) {
+    var btn = document.getElementById("btn-" + l);
+    if (l === lang) {
+      btn.classList.add("bg-[#1B6B93]", "text-white");
+      btn.classList.remove("bg-white", "text-[#1A2332]");
+    } else {
+      btn.classList.remove("bg-[#1B6B93]", "text-white");
+      btn.classList.add("bg-white", "text-[#1A2332]");
+    }
+  });
+
+  // Save preference
+  localStorage.setItem("ventilatori_lang", lang);
+}
+
+// Mobile menu toggle
+var mobileMenuOpen = false;
+function toggleMobileMenu() {
+  mobileMenuOpen = !mobileMenuOpen;
+  var menu = document.getElementById("mobile-menu");
+  var h1 = document.getElementById("ham1");
+  var h2 = document.getElementById("ham2");
+  var h3 = document.getElementById("ham3");
+  if (mobileMenuOpen) {
+    menu.classList.remove("hidden");
+    h1.style.transform = "rotate(45deg) translate(4px, 4px)";
+    h2.style.opacity = "0";
+    h3.style.transform = "rotate(-45deg) translate(4px, -4px)";
+  } else {
+    menu.classList.add("hidden");
+    h1.style.transform = "";
+    h2.style.opacity = "";
+    h3.style.transform = "";
+  }
+}
+function closeMobileMenu() {
+  mobileMenuOpen = false;
+  document.getElementById("mobile-menu").classList.add("hidden");
+  document.getElementById("ham1").style.transform = "";
+  document.getElementById("ham2").style.opacity = "";
+  document.getElementById("ham3").style.transform = "";
+}
+
+// Init
+document.addEventListener("DOMContentLoaded", function() {
+  var savedLang = localStorage.getItem("ventilatori_lang") || "lv";
+  setLang(savedLang);
+});
+</script>
+
+<!-- AOS Init -->
+<script>AOS.init({ duration: 800, once: true });</script>
+
+</body>
+</html>
